@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физика онлайн</title>
+    <link rel="stylesheet"  href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Geist+Pixel&family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>Физика онлайн</header>
+    <nav>
+        <button id="formulas">Физический калькулятор</button>
+        <button id="lab">Тренажёры</button>
+       
+    </nav>
+<div id="formulas2">
+<form>
+    <div class="section"></div>
+    <label>
+        <select id="physSection">
+            <option value="Mechanic">Механика</option>
+            <option value="Optics">Оптика</option>
+            <option value="Molecularphysics">Молекулярная физика</option>
+            
+        
+            <option value="Electricity">Электродинамика</option>
+        </select>
+    </label>
+
+</form>
+    <form>
+        <input type="number" placeholder="Введите значение" id="val1">
+        <select id="unit1Select">
+        </select>
+    </form>
+    <form>
+<input type="number" placeholder="Введите значение" id="val2">
+        <select id="unit2Select">
+        </select>
+        </form>
+        <form>
+<input type="number" placeholder="Введите значение" id="val3">
+        <select id="unit3Select">
+        </select>
+        </form>
+        </form>
+        
+
+<div id="res">
+    <button id="resultbutton" type="button">Показать результаты</button>
+    <div id="results" class="results">
+
+    </div>
+    
+</div>
+
+<div id="podskaska">
+    
+    <strong>Нет нужной единицы? <button id="openConverterButton" type="button">Воспользуйтесь конвертером</button></strong>
+    
+</div>
+
+    <div id="converter" class="hidden">
+        <h3>Конвертер единиц</h3>
+<label>
+        <select id="convertSection">
+            <option value="length">Длина</option>
+            <option value="area">Площадь</option>
+            <option value="volume">Объём</option>
+             <option value="mass">Масса</option>
+             <option value="time">Время</option>
+             <option value="speed">Скорость</option>
+             <option value="temperature">Температура</option>
+             <option value="angle">Угол</option>
+             <option value="pressure">Давление</option>
+             <option value="frequency">Частота</option>
+             <option value="energy">Энергия</option>
+        </select>
+</label>
+
+
+
+<form>
+<span>
+        <input id="convertValue" type="number" placeholder="Введите значение">
+        <select id="convertTo">
+        </select>
+</span>
+           <button id="convertresults" type="button">Перевести</button>
+    </form>
+    <div id="converterresinput"></div>
+    <button id="blockConverter" type="button" aria-label="Закрыть">
+        <span aria-hidden="true">x</span>
+    </button>
+</div>
+
+</div>
+    <div id="labpage" class="hidden">
+
+<section class="theory-training">
+  <div class="theory-training-header">
+    <h2>Тренажёр теории</h2>
+
+    <p>
+      Выберите все верные утверждения и запишите их номера.
+    </p>
+  </div>
+
+  <div class="theory-task">
+    <div class="theory-task-top">
+      <span>Задание 18</span>
+      <span id="theoryTaskNumber">Вопрос 1</span>
+    </div>
+
+    <div
+      id="theoryStatements"
+      class="theory-statements"
+    ></div>
+
+    <div class="theory-answer">
+      <label for="theoryAnswer">
+        Ответ:
+      </label>
+
+      <input
+        id="theoryAnswer"
+        type="text"
+        inputmode="numeric"
+        maxlength="3"
+        placeholder="Например: 135"
+        autocomplete="off"
+      >
+    </div>
+
+    <div class="theory-actions">
+      <button
+        id="answerTheoryButton"
+        type="button"
+      >
+        Ответить
+      </button>
+
+      <button
+        id="newTheoryButton"
+        type="button"
+      >
+        Новое задание
+      </button>
+    </div>
+
+    <div
+      id="theoryResult"
+      class="theory-result"
+      aria-live="polite"
+    ></div>
+  </div>
+</section>
+
+
+
+<section class="formula-training">
+  <div class="formula-training-header">
+    <h2>Тренажёр формул</h2>
+
+    <p>
+      Выберите правильную формулу и единицу измерения
+      для указанной физической величины.
+    </p>
+  </div>
+
+  <div class="formula-task">
+    <div class="formula-task-top">
+      <span>Формулы и единицы</span>
+      <span id="formulaTaskNumber">Вопрос 1</span>
+    </div>
+
+    <h3>
+      Физическая величина:
+      <span id="formulaQuantity"></span>
+    </h3>
+
+    <div class="formula-part">
+      <h4>Выберите формулу</h4>
+
+      <div
+        id="formulaOptions"
+        class="formula-options"
+      ></div>
+    </div>
+
+    <div class="formula-part">
+      <h4>Выберите единицу измерения</h4>
+
+      <div
+        id="unitOptions"
+        class="formula-options"
+      ></div>
+    </div>
+
+    <div class="formula-actions">
+      <button
+        id="checkFormulaButton"
+        type="button"
+      >
+        Ответить
+      </button>
+
+      <button
+        id="newFormulaButton"
+        type="button"
+      >
+        Новое задание
+      </button>
+    </div>
+
+    <div
+      id="formulaResult"
+      class="formula-result"
+      aria-live="polite"
+    ></div>
+  </div>
+</section>
+
+  
+  </div>
+ 
+  
+ 
+
+<script src="script.js" defer></script>
+</body>
+</html>
